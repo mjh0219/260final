@@ -2,6 +2,22 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def value_iteration_equipment_maintenance(max_age, failure_prob, maintenance_cost, failure_cost, discount_factor=0.9, threshold=0.01):
+
+    """
+    Implements the Value Iteration algorithm for equipment maintenance optimization.
+
+    Args:
+    max_age (int): The maximum age of the equipment.
+    failure_prob (np.array): Array of failure probabilities for each age of the equipment.
+    maintenance_cost (float): The cost incurred for performing maintenance.
+    failure_cost (float): The cost incurred if the equipment fails.
+    discount_factor (float, optional): The discount factor for future costs (default 0.9).
+    threshold (float, optional): The convergence threshold for the iteration process (default 0.01).
+
+    Returns:
+    (np.array, np.array): A tuple of two arrays, the first being the optimal policy, and the second being the value function.
+    """
+
     values = np.zeros(max_age + 1)
     policy = np.zeros(max_age + 1)
 
